@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { v4 as uuid } from "uuid";
 
 import News from "./components/News/News";
 import Article from "./components/Article/Article";
@@ -7,14 +8,14 @@ import "./App.css";
 
 const queryClient = new QueryClient();
 function App() {
-  // const { data, isFetching } = useGetCurrentWeatherDataQuery("london, uk");
-
-  // if (isFetching) return "Loading...";
-  // console.log(data);
-
   return (
     <QueryClientProvider client={queryClient}>
-      <News />
+      <Router>
+        <Routes>
+          <Route path="/" element={<News />} />
+          <Route path="/article/:uuid" element={<Article />} />
+        </Routes>
+      </Router>
     </QueryClientProvider>
   );
 }

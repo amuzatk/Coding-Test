@@ -1,0 +1,36 @@
+// colors
+$light: #f7f7f7;
+$dark: #222121;
+$lime: #00cc66;
+$orangeRed: #fb4b4e;
+$blue: #2541b2;
+
+// media queries
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 280px) {
+    @content;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  background-color: $orangeRed;
+  // display: flex;
+
+  &__container {
+    // display: grid;
+    // justify-content: center;
+    // align-items: center;
+  }
+}
