@@ -45,7 +45,7 @@ const NewsCard = ({
     <div className="card">
       <img src={urlToImage} className="card__img" />
       <div className="card__body">
-        <h2 className="news__title">{title}</h2>
+        <h3 className="news__title">{title}</h3>
         <p className="card__description">{description}</p>
         <p
           className="card__button"

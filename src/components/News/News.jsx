@@ -5,12 +5,12 @@ import axios from "axios";
 import { v4 as uuid } from "uuid";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import NewsCard from "./NewsCard";
-import "./News.css";
+import "./News.scss";
 
 const News = (props) => {
   const { data, isLoading, refetch } = useQuery("name", () => {
     return axios.get(
-      "https://newsapi.org/v2/top-headlines?country=us&category=business&pageSize=100&apiKey=3775d0dcc02e420aae630ae761863436"
+      "https://newsapi.org/v2/top-headlines?country=us&category=business&pageSize=100&apiKey=aef0fb1b65764bd0b638827a204fb60f"
     );
   });
   const [select, setSelect] = useState({ value: "select" });
@@ -43,7 +43,7 @@ const News = (props) => {
         .get(
           "https://newsapi.org/v2/everything?q=" +
             `${input}` +
-            "&apiKey=3775d0dcc02e420aae630ae761863436"
+            "&apiKey=aef0fb1b65764bd0b638827a204fb60f"
         )
         .then((res) => {
           setNews(res.data.articles);
@@ -63,7 +63,7 @@ const News = (props) => {
           `${input}` +
           "&sortBy=" +
           `${e.target.value}` +
-          "&apiKey=3775d0dcc02e420aae630ae761863436"
+          "&apiKey=aef0fb1b65764bd0b638827a204fb60f"
       )
       .then((res) => {
         setNews(res.data.articles);
@@ -86,16 +86,8 @@ const News = (props) => {
   }
 
   return (
-    <div
-      className="main"
-      // style={{
-      //   display: "flex",
-      //   flexDirection: "column",
-      //   justifyContent: "center",
-      //   alighnItem: "center",
-      //   width: "100%",
-      // }}
-    >
+    <div className="main">
+      <h1>Headline News</h1>
       <div className="main__container">
         <div className="main__container--form">
           <form onSubmit={onSubmit}>
@@ -103,23 +95,32 @@ const News = (props) => {
               type="text"
               onChange={onChange}
               value={input}
-              placeholder="search"
+              placeholder="search..."
             />
             <button>search</button>
           </form>
-          {sortBy && <p onClick={topHeadline}>Top Headline</p>}
+          {sortBy && <p onClick={topHeadline}>Back to Top Headline</p>}
           {sortBy && (
-            <div>
+            <div className="sort">
               <select
+                className="selection"
                 value={select.value}
                 name="sort-by"
                 id="sort-by"
                 onChange={handleSortBy}
               >
-                <option value="">Sort By</option>
-                <option value="relevancy">Relevancy</option>
-                <option value="popularity">Popularity</option>
-                <option value="publishedAt">Published At</option>
+                <option className="default" value="">
+                  Sort By:
+                </option>
+                <option className="sorter-1" value="relevancy">
+                  Relevancy
+                </option>
+                <option className="sorter-2" value="popularity">
+                  Popularity
+                </option>
+                <option className="sorter-3" value="publishedAt">
+                  Published At
+                </option>
               </select>{" "}
             </div>
           )}
@@ -138,24 +139,26 @@ const News = (props) => {
             } = article;
             const { name } = source;
             return (
-              <div key={uuid()}>
-                <NewsCard
-                  url={url}
-                  name={name}
-                  content={content}
-                  publishedAt={publishedAt}
-                  author={author}
-                  id={uuid()}
-                  title={title}
-                  description={description}
-                  urlToImage={urlToImage}
-                />
-              </div>
+              <NewsCard
+                key={uuid()}
+                className="news--card"
+                url={url}
+                name={name}
+                content={content}
+                publishedAt={publishedAt}
+                author={author}
+                id={uuid()}
+                title={title}
+                description={description}
+                urlToImage={urlToImage}
+              />
             );
           })}
         </div>
       </div>
+
       <ReactPaginate
+        className="footer"
         previousLabel="Previous"
         nextLabel="Load More"
         pageCount={pageCount}
