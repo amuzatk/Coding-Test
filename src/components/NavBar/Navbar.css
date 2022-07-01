@@ -61,5 +61,6 @@
 @media screen and (max-width: 768px) {
   .navbar__hamburger {
     display: flex;
+    padding: 1.5rem;
   }
 }

@@ -38,12 +38,9 @@ $blue: #2541b2;
 
   &__logo {
     cursor: pointer;
-
-    // @extend %align-center;
   }
 
   &__bars {
-    // display: none;
     opacity: 0;
 
     @include tablet {
@@ -85,23 +82,7 @@ $blue: #2541b2;
 
     @include tablet {
       display: flex;
-
-      //   &__menu--active {
-      //     left: 0;
-      //   }
-      //   &__menu {
-      //     position: fixed;
-      //     top: 50px;
-      //     left: -100%;
-      //     flex-direction: column;
-      //     justify-content: center;
-      //     text-align: center;
-      //     background-color: #808080;
-      //     width: 100%;
-      //     height: 100vh;
-      //     transition: 0.4s;
-      //     z-index: 3;
-      //   }
+      padding: 1.5rem;
     }
   }
 }

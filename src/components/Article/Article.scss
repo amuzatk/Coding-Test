@@ -1,19 +1,65 @@
-// colors
-$light: #f7f7f7;
+// .card__img {
+//   width: 450px;
+//   height: 350px;
+//   border-radius: 17px;
+//   padding-left: 15px;
+//   padding-top: 15px;
+// }
+
+$white: #f2f2f1;
+$logoColor: #4d4a48;
 $dark: #222121;
 $lime: #00cc66;
-$orangeRed: #fb4b4e;
+$orangeRed: #dbf5e0;
 $blue: #2541b2;
 
-// media queries
 @mixin tablet {
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
     @content;
   }
 }
 
-@mixin mobile {
-  @media screen and (max-width: 280px) {
+@mixin mobiles {
+  @media screen and (max-width: 600px) {
     @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin laptops {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: rgb(216, 216, 234);
+
+  @include small {
+    .newss__title {
+      font-size: 75px;
+      color: $blue;
+    }
+
+    button {
+      margin-left: 160px;
+    }
   }
 }

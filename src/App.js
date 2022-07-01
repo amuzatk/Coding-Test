@@ -5,7 +5,6 @@ import { v4 as uuid } from "uuid";
 import News from "./components/News/News";
 import Article from "./components/Article/Article";
 import NavBar from "./components/NavBar/NavBar";
-import "./App.css";
 
 const queryClient = new QueryClient();
 function App() {

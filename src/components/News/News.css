@@ -40,6 +40,7 @@
     border-color: #2541b2;
     border-right: 10px;
     padding: 1px 3px;
+    cursor: pointer;
   }
 }
 @media screen and (max-width: 320px) {
@@ -55,6 +56,7 @@
   }
   .main .main__container--form button {
     margin-left: 160px;
+    cursor: pointer;
   }
 }
 @media screen and (min-width: 600px) {
@@ -72,6 +74,7 @@
     border-color: #1baf9b;
     border-right: 10px;
     padding: 1px 3px;
+    cursor: pointer;
   }
 }
 @media screen and (min-width: 768px) {
@@ -82,6 +85,7 @@
   .main .main__container--form button {
     margin-left: 550px;
     margin-top: -800px;
+    cursor: pointer;
   }
   .main .main__container--form select {
     margin-top: -550px;
@@ -101,12 +105,14 @@
 }
 @media screen and (min-width: 992px) {
   .main .main__container--form {
-    font-size: 100px;
+    font-size: 50px;
     margin-left: 35px;
+    margin-top: 50px;
   }
   .main .main__container--form button {
-    margin-left: 1135px;
-    margin-top: -1800px;
+    margin-left: 570px;
+    margin-top: -550px;
+    cursor: pointer;
   }
 }
 .main .main__container--content {
@@ -117,16 +123,56 @@
 }
 .main .main__container--content .card {
   width: 100%;
-  margin-bottom: 25px;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid rgb(214, 214, 214);
   border-radius: 4px;
   transition: box-shadow 2s ease-in-out;
 }
 @media screen and (min-width: 992px) {
-  .main .main__container--content .card {
+  .main .main__container--content .card .card {
     width: 33.33%;
-    padding: 1.5rem calc((100vw - 1200px) / 2);
+    display: flex;
+    flex-direction: row;
+    margin: 5px 5px;
+    width: 100%;
+    border: 0.5px solid rgb(214, 214, 214);
+    border-radius: 3px;
+    transition: box-shadow 3s ease-in-out;
+  }
+  .main .main__container--content .card button {
+    cursor: pointer;
+  }
+  .main .main__container--content .card .card__img {
+    width: 450px;
+    height: 350px;
+    border-radius: 17px;
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+  .main .main__container--content .card .card__body {
+    width: 400px;
+    padding-left: 15px;
+  }
+  .main .main__container--content .card .news__title {
+    margin-top: 5px;
+  }
+  .main .main__container--content .card .card__description {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 23px;
+  }
+  .main .main__container--content .card .card__button {
+    background-color: hsl(226deg, 95%, 49%);
+    color: #f2f2f1;
+    width: 120px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  .main .main__container--content .card .card__button:hover {
+    color: #00cc66;
   }
 }
 .main .main__container--content .card:hover {
@@ -137,6 +183,11 @@
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
+}
+@media screen and (min-width: 992px) {
+  .main .footer {
+    justify-content: last baseline;
+  }
 }
 .main:hover {
   color: #2541b2;

@@ -1,6 +1,7 @@
 import React from "react";
 
-import "./ArticleCard";
+// import "./ArticleCard";
+import "./Article.scss";
 
 const Article = () => {
   const news = localStorage.getItem("news");
@@ -18,19 +19,24 @@ const Article = () => {
   } = newsObj;
 
   return (
-    <div>
-      <img src={urlToImage} alt={name} />
-
-      <h1>title: {title}</h1>
-      <h1>author: {author}</h1>
-      <h1>name: {name}</h1>
-      <h1>publishedAt: {publishedAt}</h1>
-      <h1>description: {description}</h1>
-      <h1>content: {content}</h1>
-      <a href={url} target="_blank" rel="noopener noreferrer">
-        {/* Read Full Article */}
-        READ FULL ARTICLE
-      </a>
+    <div className="container">
+      <img src={urlToImage} alt={name} className="card__img" />
+      <div className="card__body">
+        <h3 className="newss__title">title: {title}</h3>
+        <h3 className="news__author">author: {author}</h3>
+        <h3 className="news__name">name: {name}</h3>
+        <h3 className="news__date">publishedAt: {publishedAt}</h3>
+        <h3 className="news__desc">description: {description}</h3>
+        <p>content: {content}</p>
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card__button"
+        >
+          READ FULL ARTICLE
+        </a>
+      </div>
     </div>
   );
 };
