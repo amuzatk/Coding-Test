@@ -1,15 +1,9 @@
-/* Extra small devices (phones, 600px and down) */
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.main {
-  background-color: #dbf5e0;
-}
 @media screen and (min-width: 768px) {
   .main h1 {
     margin-left: 200px;
@@ -17,6 +11,9 @@
   }
 }
 @media screen and (min-width: 992px) {
+  .main {
+    background-color: #dbf5e0;
+  }
   .main h1 {
     margin-left: 35px;
     font-size: 85px;

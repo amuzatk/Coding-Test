@@ -7,15 +7,10 @@
 .container {
   background-color: rgb(216, 216, 234);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 320px) {
   .container .newss__title {
     font-size: 75px;
     color: #2541b2;
-  }
-
-  .cards__img {
-    width: 200px;
-    height: 150px;
   }
   .container button {
     margin-left: 160px;

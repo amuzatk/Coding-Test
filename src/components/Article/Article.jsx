@@ -1,6 +1,5 @@
 import React from "react";
 
-// import "./ArticleCard";
 import "./Article.scss";
 
 const Article = () => {

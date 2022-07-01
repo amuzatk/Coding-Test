@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 import { useQuery } from "react-query";
 import axios from "axios";
 import { v4 as uuid } from "uuid";
-import { Card, Button, Row, Col } from "react-bootstrap";
+
 import NewsCard from "./NewsCard";
 import "./News.scss";
 

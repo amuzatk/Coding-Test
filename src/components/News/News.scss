@@ -1,4 +1,3 @@
-// colors
 $white: #f2f2f1;
 $logoColor: #4d4a48;
 $dark: #222121;
@@ -6,18 +5,11 @@ $lime: #00cc66;
 $orangeRed: #dbf5e0;
 $blue: #2541b2;
 
-// media queries
 @mixin tablet {
   @media screen and (min-width: 768px) {
     @content;
   }
 }
-
-// @mixin mobile {
-//   @media screen and (max-width: 280px) {
-//     @content;
-//   }
-// }
 
 @mixin mobiles {
   @media screen and (max-width: 600px) {
@@ -43,47 +35,11 @@ $blue: #2541b2;
   }
 }
 
-/* Extra small devices (phones, 600px and down) */
-// @media only screen and (max-width: 600px) {...}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {...}
-/* Large devices (laptops/desktops, 992px and up) */
-// @media only screen and (min-width: 992px) {...}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
-// .main {
-//   @include tablet {
-//   }
-//   background-color: $orangeRed;
-//   padding: 0.5rem calc((100vw - 1200px) / 2);
-
-//   .main__container--content {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-between;
-
-//     margin: 20px auto;
-
-// .card {
-//   width: 24%;
-
-//   margin-bottom: 15px;
-//   padding: 10px;
-//   border: 1px solid rgb(214, 214, 214);
-//   border-radius: 5px;
-//   transition: box-shadow 2s ease-in-out;
-
-//   &:hover {
-//     box-shadow: 2px 2px 15px rgb(171, 210, 210);
-//   }
-// }
-//   }
-// }
 
 .main {
   @include tablet {
@@ -94,16 +50,14 @@ $blue: #2541b2;
   }
 
   @include laptops {
+    background-color: $orangeRed;
+
     h1 {
-      // justify-content: center;
       margin-left: 35px;
       font-size: 85px;
       color: #073df0;
     }
   }
-
-  background-color: $orangeRed;
-  // padding: 0.5rem calc((100vw - 1200px) / 2);
 
   .main__container--form {
     @include mobiles {
